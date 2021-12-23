@@ -1,0 +1,24 @@
+{
+  "name": "jonesybot",
+  "version": "1.0.0",
+  "description": "Free Fortnite LobbyBot Network",
+  "main": "src/discord/main.js",
+  "scripts": {
+    "start": "node src/discord/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Huguitis/JonesyBot/issues"
+  },
+  "homepage": "https://github.com/Huguitis/JonesyBot#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.1",
+    "express": "^4.17.1",
+    "fnbr": "^1.4.1",
+    "mongoose": "^5.11.9",
+    "querystring": "^0.2.0"
+  }
+}
