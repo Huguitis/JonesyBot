@@ -1,0 +1,31 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2024-08-21T01:55:57+03:00",
+    "name": "Huguitis LobbyBots",
+    "author": "huguitisgp@gmail.com",
+    "description": "Run your own fortnite lobbybots! Huguitis version.",
+    "features": null,
+    "docker_images": {
+        "Python v3.10": "ghcr.io\/parkervcp\/yolks:python_3.10"
+    },
+    "file_denylist": [],
+    "startup": "[ -f \/FNLobbyBots\/requirements.txt ] && pip install --upgrade -r \/FNLobbyBots\/requirements.txt --target .local && python3 \/FNLobbyBots\/main.py",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Starting...\"\r\n}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# Update package list\r\nif ! apt update; then\r\necho \"Error updating packages.\"\r\nexit 1\r\nfi\r\n# Install required dependencies\r\nif ! apt install -y git curl jq file unzip make gcc g++ python python-dev libtool; then\r\necho \"Error installing dependencies.\"\r\nexit 1\r\nfi\r\n# Set up server directory\r\nSERVER_DIR=\"\/mnt\/server\"\r\nmkdir -p \"$SERVER_DIR\"\r\ncd \"$SERVER_DIR\"\r\n# Check if the file already exists\r\nif [ -f \"config.json\" ]; then\r\necho \"Attention! The file config.json already exists. Reinstall will not be performed.\"\r\nfi\r\ngit clone --branch main https:\/\/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@github.com\/Huguitis\/FNLobbyBotsConfig.git .\r\necho \"Installation complete\"\r\nexit 0",
+            "container": "python:3.10-slim-bullseye",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": []
+}
